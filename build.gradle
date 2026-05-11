@@ -45,6 +45,10 @@ dependencies {
 
     // Origins Fabric for MC 1.20.1 (v1.10.0 confirmed on Ladysnake maven)
     modImplementation "io.github.apace100:origins-fabric:v1.10.0"
+    // Apoli — Origins' power API, needed for direct class references
+    modImplementation "com.github.apace100:apoli:v2.6.0"
+    // Cardinal Components — needed to compile against PowerHolderComponent.KEY
+    modCompileOnly "dev.onyxstudios.cardinal-components-api:cardinal-components-base:5.2.2"
 }
 
 processResources {
