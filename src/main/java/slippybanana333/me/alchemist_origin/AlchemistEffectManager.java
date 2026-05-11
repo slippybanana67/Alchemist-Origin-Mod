@@ -25,8 +25,8 @@ public class AlchemistEffectManager {
     /** UUIDs whose next addStatusEffect call should bypass debuff immunity. */
     private static final Set<UUID> bypassImmunitySet = new HashSet<>();
 
-    /** Each per-second refresh gives 2 seconds (40 ticks) of duration. */
-    private static final int REFRESH_DURATION = 40;
+    /** Each per-second refresh gives 3 seconds (60 ticks) of duration. */
+    private static final int REFRESH_DURATION = 60;
 
     // ── Tick ──────────────────────────────────────────────────────────────────
 
@@ -34,17 +34,30 @@ public class AlchemistEffectManager {
         AlchemistPlayerData data = playerData.get(player.getUuid());
         if (data == null) return;
 
+        boolean inWater = player.isTouchingWater();
+        boolean inLava  = player.isInLava();
+
         boolean anyActive = false;
         for (int i = 0; i < data.getUnlockedSlots(); i++) {
             AlchemistEffectType type = data.getEffect(i);
             if (type == null) continue;
             anyActive = true;
+
+            if (inWater && type != AlchemistEffectType.DOLPHINS_GRACE) {
+                player.removeStatusEffect(type.effect);
+                continue;
+            }
+            if (inLava && type != AlchemistEffectType.FIRE_RESISTANCE) {
+                player.removeStatusEffect(type.effect);
+                continue;
+            }
+
             player.addStatusEffect(new StatusEffectInstance(
                     type.effect, REFRESH_DURATION, type.amplifier, false, false
             ));
         }
 
-        if (anyActive && (player.isTouchingWater() || player.isInLava())) {
+        if (anyActive && (inWater || inLava)) {
             player.addExhaustion(0.5f);
             bypassImmunitySet.add(player.getUuid());
             try {
