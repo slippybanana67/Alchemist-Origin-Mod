@@ -31,6 +31,8 @@ public class PlayerDataMixin {
     private void copyAlchemistData(ServerPlayerEntity oldPlayer, boolean alive, CallbackInfo ci) {
         if (alive) {
             AlchemistEffectManager.copyData(oldPlayer, (ServerPlayerEntity)(Object)this);
+        } else {
+            AlchemistEffectManager.resetData((ServerPlayerEntity)(Object)this);
         }
     }
 }

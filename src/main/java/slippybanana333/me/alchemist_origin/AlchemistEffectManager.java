@@ -40,7 +40,7 @@ public class AlchemistEffectManager {
             if (type == null) continue;
             anyActive = true;
             player.addStatusEffect(new StatusEffectInstance(
-                    type.effect, REFRESH_DURATION, type.amplifier, false, true
+                    type.effect, REFRESH_DURATION, type.amplifier, false, false
             ));
         }
 
@@ -49,7 +49,7 @@ public class AlchemistEffectManager {
             bypassImmunitySet.add(player.getUuid());
             try {
                 player.addStatusEffect(new StatusEffectInstance(
-                        StatusEffects.WEAKNESS, 80, 0, false, true
+                        StatusEffects.WEAKNESS, 80, 0, false, false
                 ));
             } finally {
                 bypassImmunitySet.remove(player.getUuid());
@@ -86,6 +86,10 @@ public class AlchemistEffectManager {
         AlchemistPlayerData src = playerData.get(from.getUuid());
         playerData.put(to.getUuid(),
                 src != null ? AlchemistPlayerData.fromNbt(src.toNbt()) : new AlchemistPlayerData());
+    }
+
+    public static void resetData(ServerPlayerEntity player) {
+        playerData.put(player.getUuid(), new AlchemistPlayerData());
     }
 
     public static void onPlayerDisconnect(ServerPlayerEntity player) {
