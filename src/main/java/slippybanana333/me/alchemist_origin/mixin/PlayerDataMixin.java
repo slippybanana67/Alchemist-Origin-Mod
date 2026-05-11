@@ -29,6 +29,8 @@ public class PlayerDataMixin {
 
     @Inject(method = "copyFrom", at = @At("TAIL"))
     private void copyAlchemistData(ServerPlayerEntity oldPlayer, boolean alive, CallbackInfo ci) {
-        AlchemistEffectManager.copyData(oldPlayer, (ServerPlayerEntity)(Object)this);
+        if (alive) {
+            AlchemistEffectManager.copyData(oldPlayer, (ServerPlayerEntity)(Object)this);
+        }
     }
 }
