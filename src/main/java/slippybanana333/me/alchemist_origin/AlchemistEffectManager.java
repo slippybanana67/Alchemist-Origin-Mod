@@ -25,8 +25,8 @@ public class AlchemistEffectManager {
     /** UUIDs whose next addStatusEffect call should bypass debuff immunity. */
     private static final Set<UUID> bypassImmunitySet = new HashSet<>();
 
-    /** Each per-second refresh gives 10 seconds (200 ticks) of duration. */
-    private static final int REFRESH_DURATION = 200;
+    /** Each per-second refresh gives 2 seconds (40 ticks) of duration. */
+    private static final int REFRESH_DURATION = 40;
 
     // ── Tick ──────────────────────────────────────────────────────────────────
 
