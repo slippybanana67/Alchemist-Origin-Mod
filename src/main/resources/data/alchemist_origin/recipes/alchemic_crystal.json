@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "OAO",
+    "ADA",
+    "OAO"
+  ],
+  "key": {
+    "O": { "item": "minecraft:obsidian" },
+    "A": { "item": "minecraft:amethyst_shard" },
+    "D": { "item": "minecraft:diamond_block" }
+  },
+  "result": {
+    "item": "alchemist_origin:effect_upgrade_1",
+    "count": 1
+  }
+}

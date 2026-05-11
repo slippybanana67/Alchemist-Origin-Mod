@@ -1,0 +1,17 @@
+﻿{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NGN",
+    "GSG",
+    "NGN"
+  ],
+  "key": {
+    "N": { "item": "minecraft:netherite_ingot" },
+    "G": { "item": "minecraft:ghast_tear" },
+    "S": { "item": "minecraft:nether_star" }
+  },
+  "result": {
+    "item": "alchemist_origin:effect_upgrade_3",
+    "count": 1
+  }
+}

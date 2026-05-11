@@ -1,0 +1,9 @@
+{
+  "origin.alchemist_origin.alchemist.name": "Alchemist",
+  "origin.alchemist_origin.alchemist.description": "A master of potions. Craft Effect Upgrades to unlock slots and level up your permanent effects.",
+  "power.alchemist_origin.reduced_health.name": "Reduced Vitality",
+  "power.alchemist_origin.reduced_health.description": "You only have 8 hearts of maximum health (down from 10).",
+  "item.alchemist_origin.effect_upgrade_1": "Effect Upgrade I",
+  "item.alchemist_origin.effect_upgrade_2": "Effect Upgrade II",
+  "item.alchemist_origin.effect_upgrade_3": "Effect Upgrade III"
+}

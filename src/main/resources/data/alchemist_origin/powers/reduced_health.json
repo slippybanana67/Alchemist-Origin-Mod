@@ -1,0 +1,12 @@
+{
+  "type": "origins:attribute",
+  "name": "Reduced Vitality",
+  "description": "The Alchemist's fragile body only supports 8 hearts of maximum health (down from the default 10).",
+  "modifier": {
+    "attribute": "minecraft:generic.max_health",
+    "operation": "addition",
+    "value": -4.0,
+    "name": "Alchemist Reduced Health"
+  }
+}
+

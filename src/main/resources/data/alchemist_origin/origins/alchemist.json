@@ -1,0 +1,13 @@
+{
+  "name": "Alchemist",
+  "description": "A master of potions who channels one permanent effect of their choosing. They reject all mundane ailments — but milk is lethal to them, and liquids sap their strength and hunger.",
+  "icon": {
+    "item": "minecraft:brewing_stand"
+  },
+  "powers": [
+    "alchemist_origin:reduced_health"
+  ],
+  "order": 0,
+  "impact": 2
+}
+

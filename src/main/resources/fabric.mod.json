@@ -1,0 +1,33 @@
+{
+  "schemaVersion": 1,
+  "id": "alchemist_origin",
+  "version": "${version}",
+  "name": "Alchemist Origin",
+  "description": "Adds the Alchemist origin for the Origins mod.",
+  "authors": [],
+  "contact": {},
+  "license": "All-Rights-Reserved",
+  "icon": "assets/alchemist_origin/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "slippybanana333.me.alchemist_origin.client.Alchemist_originClient"
+    ],
+    "main": [
+      "slippybanana333.me.alchemist_origin.Alchemist_origin"
+    ]
+  },
+  "mixins": [
+    "alchemist_origin.mixins.json",
+    {
+      "config": "alchemist_origin.client.mixins.json",
+      "environment": "client"
+    }
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric-api": "*",
+    "minecraft": "${minecraft_version}",
+    "origins": "*"
+  }
+}

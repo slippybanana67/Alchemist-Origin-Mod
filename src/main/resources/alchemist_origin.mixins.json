@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "slippybanana333.me.alchemist_origin.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "MilkDrinkMixin",
+    "DebuffImmunityMixin",
+    "PlayerDataMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
