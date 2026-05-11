@@ -1,5 +1,5 @@
 {
   "type": "origins:simple",
   "name": "Liquid Aversion",
-  "description": "Touching water or lava applies Weakness I and drains hunger every second."
+  "description": "Touching water applies Weakness I, drains hunger, and removes all channeled effects except Dolphin's Grace. Touching lava does the same but removes all effects except Fire Resistance. Effects return when you leave."
 }

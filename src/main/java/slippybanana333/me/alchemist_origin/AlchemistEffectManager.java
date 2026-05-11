@@ -106,7 +106,6 @@ public class AlchemistEffectManager {
     }
 
     public static void onPlayerDisconnect(ServerPlayerEntity player) {
-        playerData.remove(player.getUuid());
         bypassImmunitySet.remove(player.getUuid());
     }
 }
