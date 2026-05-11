@@ -1,0 +1,5 @@
+{
+  "type": "origins:nothing",
+  "name": "Alchemic Immunity",
+  "description": "While channeling an effect, all harmful status effects (poison, wither, blindness, etc.) are completely blocked."
+}

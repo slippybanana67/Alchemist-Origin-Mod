@@ -1,0 +1,5 @@
+{
+  "type": "origins:nothing",
+  "name": "Liquid Aversion",
+  "description": "Touching water or lava applies Weakness I and drains hunger every second."
+}

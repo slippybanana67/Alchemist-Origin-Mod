@@ -5,7 +5,11 @@
     "item": "minecraft:brewing_stand"
   },
   "powers": [
-    "alchemist_origin:reduced_health"
+    "alchemist_origin:channeled_effect",
+    "alchemist_origin:debuff_immunity",
+    "alchemist_origin:reduced_health",
+    "alchemist_origin:milk_lethal",
+    "alchemist_origin:liquid_weakness"
   ],
   "order": 0,
   "impact": 2
