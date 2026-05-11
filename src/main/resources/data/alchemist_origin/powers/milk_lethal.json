@@ -1,5 +1,5 @@
 {
-  "type": "origins:nothing",
+  "type": "origins:simple",
   "name": "Milk Allergy",
   "description": "Drinking milk instantly kills you. Milk purges all potion effects — the very foundation of your power."
 }

@@ -1,5 +1,5 @@
 {
-  "type": "origins:nothing",
+  "type": "origins:simple",
   "name": "Channeled Effect",
   "description": "Craft Effect Upgrade items to unlock up to 3 permanent effect slots. Use /alc to choose from Speed, Strength II, Regeneration, Haste, Fire Resistance, Saturation, Dolphin's Grace, or Hero of the Village III."
 }
