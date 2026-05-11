@@ -1,6 +1,8 @@
 package slippybanana333.me.alchemist_origin;
 
 import com.mojang.brigadier.context.CommandContext;
+import io.github.apace100.apoli.component.PowerHolderComponent;
+import io.github.apace100.apoli.power.PowerTypeRegistry;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.minecraft.screen.SimpleNamedScreenHandlerFactory;
 import net.minecraft.server.command.CommandManager;
@@ -8,19 +10,13 @@ import net.minecraft.server.command.ServerCommandSource;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 
 /**
  * Registers the /alc command.
  *
  * /alc — opens the Alchemist effect-selection GUI for the executing player.
- *
- * Permission: available to all players (requirement level 0).
- * Intended use: players who chose the Alchemist origin use this to pick or
- * change their permanent potion effect.  The Origins JSON powers (reduced
- * health, etc.) already gate drawbacks behind origin selection; this command
- * only grants the beneficial side (chosen effect + debuff immunity) to anyone
- * who invokes it, which is an acceptable design for a co-operative server.
- * If stricter gating is required, add an Origins API check here.
+ * Requires the player to have the Alchemist origin; denies access otherwise.
  */
 public class AlchemistCommand {
 
@@ -38,6 +34,14 @@ public class AlchemistCommand {
 
         if (!(source.getEntity() instanceof ServerPlayerEntity player)) {
             source.sendError(Text.literal("Only players can use /alc."));
+            return 0;
+        }
+
+        boolean isAlchemist = PowerHolderComponent.KEY.get(player)
+                .hasPower(PowerTypeRegistry.get(new Identifier("alchemist_origin", "reduced_health")));
+
+        if (!isAlchemist) {
+            source.sendError(Text.literal("You must be an Alchemist to use this command."));
             return 0;
         }
 
